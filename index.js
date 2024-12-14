@@ -44,3 +44,12 @@ home.style.cssText = style;
 about.style.cssText = style;
 service.style.cssText = style;
 contact.style.cssText = style;
+
+// --------------- this part is to creat the main ----------------
+// let container = document.createElement("div");
+// container.classList = "container";
+// for (let i = 0; i < 15; i++) {
+//   let items = document.createElement("div");
+//   items.classList = `item-${i + 1}`;
+
+// }
