@@ -30,7 +30,7 @@ document.body.appendChild(header);
 let style = "padding-inline:20px";
 
 document.body.style.cssText =
-  "margin:0;padding:0; box-sizing: border-box; background-color:lightgray; ";
+  "margin:0;padding:0; box-sizing: border-box; background-color:lightgray; color:gray;  ";
 
 header.style.cssText =
   "background-color:white; display:flex;justify-content:space-between;align-items:center; font-size:20px";
@@ -46,10 +46,44 @@ service.style.cssText = style;
 contact.style.cssText = style;
 
 // --------------- this part is to creat the main ----------------
-// let container = document.createElement("div");
-// container.classList = "container";
-// for (let i = 0; i < 15; i++) {
-//   let items = document.createElement("div");
-//   items.classList = `item-${i + 1}`;
 
-// }
+let container = document.createElement("main");
+container.className = "container";
+
+container.style.cssText =
+  " margin:20px;display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:20px";
+
+for (let i = 0; i < 15; i++) {
+  let div = document.createElement("div");
+  let product = document.createElement("p");
+
+  div.className = `element ${i + 1}`;
+  product.className = `product ${i + 1}`;
+  product.innerHTML = `<span style="font-size:30px ;color:black; margin:13px">${
+    i + 1
+  }</span></br> Product`;
+
+  div.appendChild(product);
+  container.appendChild(div);
+
+  div.style.cssText =
+    "width:300px; height:120px;background-color:white; border-radius:4px; display:flex;justify-content:center;align-items:center";
+}
+document.body.appendChild(container);
+
+//----------------------footer--------------------------
+
+let footer = document.createElement("footer");
+footer.textContent = "Copyright 2021";
+
+footer.style.cssText = `font-size:20px; 
+background-color:green ;
+color:white;
+position:fixed;
+padding-top:20px;
+left:0;
+bottom:0;
+height:50px ;
+width:100% ;
+text-align:center `;
+document.body.appendChild(footer);
