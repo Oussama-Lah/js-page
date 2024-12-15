@@ -1,5 +1,5 @@
 let header = document.createElement("header");
-let logo = document.createElement("h3");
+let logo = document.createElement("h2");
 let ul = document.createElement("ul");
 let home = document.createElement("li");
 let about = document.createElement("li");
@@ -29,29 +29,52 @@ document.body.appendChild(header);
 
 let style = "padding-inline:20px";
 
-document.body.style.cssText =
-  "margin:0;padding:0; box-sizing: border-box; background-color:lightgray; color:gray;  ";
+document.body.style.cssText = `
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    background-color:lightgray;
+    color:gray;`;
 
-header.style.cssText =
-  "background-color:white; display:flex;justify-content:space-between;align-items:center; font-size:20px";
+header.style.cssText = `
+    background-color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center; 
+    width:100%;
+    height:80px;
+    font-size:20px`;
 
-logo.style.cssText = "color:green;justify-content:start; margin:10px";
+logo.style.cssText = `
+    color:green;
+    justify-content:start; 
+    margin:10px`;
 
-ul.style.cssText =
-  " list-style-type: none;display:flex; justify-content:end; margin:20px";
+ul.style.cssText = `
+    list-style-type: none;
+    display:flex;
+    margin:20px;`;
 
 home.style.cssText = style;
 about.style.cssText = style;
 service.style.cssText = style;
 contact.style.cssText = style;
 
-// --------------- this part is to creat the main ----------------
+// // --------------- this part is to creat the main ----------------
 
 let container = document.createElement("main");
 container.className = "container";
 
-container.style.cssText =
-  " margin:20px;display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:20px";
+container.style.cssText = `
+    background-color: #e5e5e5;
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    align-items:center;
+    flex-grow:1;
+`;
 
 for (let i = 0; i < 15; i++) {
   let div = document.createElement("div");
@@ -66,24 +89,27 @@ for (let i = 0; i < 15; i++) {
   div.appendChild(product);
   container.appendChild(div);
 
-  div.style.cssText =
-    "width:300px; height:120px;background-color:white; border-radius:4px; display:flex;justify-content:center;align-items:center";
+  div.style.cssText = `
+    width:300px;
+    height:100px;
+    background-color:white;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center`;
 }
 document.body.appendChild(container);
 
-//----------------------footer--------------------------
+// //----------------------footer--------------------------
 
 let footer = document.createElement("footer");
 footer.textContent = "Copyright 2021";
 
-footer.style.cssText = `font-size:20px; 
-background-color:green ;
-color:white;
-position:fixed;
-padding-top:20px;
-left:0;
-bottom:0;
-height:50px ;
-width:100% ;
-text-align:center `;
+footer.style.cssText = `
+    font-size:20px;
+    background-color:green ;
+    color:white;
+    padding:5px 0;;
+    height:60px ;
+    text-align:center `;
 document.body.appendChild(footer);
